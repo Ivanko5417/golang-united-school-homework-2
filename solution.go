@@ -2,13 +2,13 @@ package square
 
 import "math"
 
-type MyCustomInt int
+type SidesNumber int
 
-const SidesTriangle MyCustomInt = 3
-const SidesSquare MyCustomInt = 4
-const SidesCircle MyCustomInt = 0
+const SidesTriangle SidesNumber = 3
+const SidesSquare SidesNumber = 4
+const SidesCircle SidesNumber = 0
 
-func CalcSquare(sideLen float64, sidesNum MyCustomInt) float64 {
+func CalcSquare(sideLen float64, sidesNum SidesNumber) float64 {
 	sideLenSquare := sideLen * sideLen
 	switch sidesNum {
 	case SidesTriangle:
