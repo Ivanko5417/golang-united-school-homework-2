@@ -11,20 +11,20 @@ import "math"
 // CalcSquare(10.0, SidesCircle)
 type myCustomInt int
 
-const SidesTriangle = 3
-const SidesSquare = 4
-const SidesCircle = 0
+const SidesTriangle myCustomInt = 3
+const SidesSquare myCustomInt = 4
+const SidesCircle myCustomInt = 0
 
 func CalcSquare(sideLen float64, sidesNum myCustomInt) float64 {
 	sideLenSquare := sideLen * sideLen
-	if sidesNum == SidesSquare {
+	switch sidesNum {
+	case SidesTriangle:
+		return sideLenSquare * math.Sqrt(3) / 4
+	case SidesSquare:
+		return sideLenSquare
+	case SidesCircle:
+		return math.Pi * sideLenSquare
+	default:
 		return sideLenSquare
 	}
-	if sidesNum == SidesTriangle {
-		return sideLenSquare * math.Sqrt(3) / 4
-	}
-	if sidesNum == SidesCircle {
-		return math.Pi * sideLenSquare
-	}
-	return sideLenSquare
 }
