@@ -2,13 +2,15 @@ package square
 
 import "math"
 
-type SidesNumber int
+type sidesNumber int
 
-const SidesTriangle SidesNumber = 3
-const SidesSquare SidesNumber = 4
-const SidesCircle SidesNumber = 0
+const (
+	SidesCircle   sidesNumber = 0
+	SidesTriangle sidesNumber = 3
+	SidesSquare   sidesNumber = 4
+)
 
-func CalcSquare(sideLen float64, sidesNum SidesNumber) float64 {
+func CalcSquare(sideLen float64, sidesNum sidesNumber) float64 {
 	sideLenSquare := sideLen * sideLen
 	switch sidesNum {
 	case SidesTriangle:
@@ -17,7 +19,6 @@ func CalcSquare(sideLen float64, sidesNum SidesNumber) float64 {
 		return sideLenSquare
 	case SidesCircle:
 		return math.Pi * sideLenSquare
-	default:
-		return 0
 	}
+	return 0
 }
